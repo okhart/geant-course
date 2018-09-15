@@ -1,10 +1,18 @@
 #!/bin/bash
 
-echo "Installing sources (it may take a few minutes)..."
-cp -r geant4.10.04.p02 /opt/
-chmod -R 777 /opt/geant4.10.04.p02
-echo "Setting environment variables to shell..."
+CURRENT_DIR=$(pwd)
+mkdir ./geant4.10.04.p02-build
+cd geant4.10.04.p02-build
+mkdir /opt/geant4.10.04.p02
+cmake -DGEANT4_INSTALL_DATA=ON -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_BUILD_MULTITHREADED=ON -DGEANT4_USE_QT=ON -DCMAKE_INSTALL_PREFIX=/opt/geant4.10.04.p02 $CURRENT_DIR/geant4.10.04.p02
+
+make -j4 VERBOSE=1
+
+make install
 echo "source /opt/geant4.10.04.p02/bin/geant4.sh" >> $HOME/.bashrc
-echo "Setting environment variables to current session..."
 source /opt/geant4.10.04.p02/bin/geant4.sh
-echo "Finished!"
+cd CURRENT_DIR
+cp -r ./geant4.10.04.p02/examples $HOME
+chmod -R 777 $HOME/examples
+rm -rf geant4.10.04.p02
+mv $HOME/examples $HOME/geant4-examples
