@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Installing sources (it may take a few minutes)..."
+cp -r geant4.10.04.p02 /opt/
+chmod -R 777 /opt/geant4.10.04.p02
+echo "Setting environment variables to shell..."
+echo "source /opt/geant4.10.04.p02/bin/geant4.sh" >> $HOME/.bashrc
+echo "Setting environment variables to current session..."
+source /opt/geant4.10.04.p02/bin/geant4.sh
+echo "Finished!"

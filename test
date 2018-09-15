@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cp -r B1 /tmp
+cd /tmp
+mkdir B1-build
+cd B1-build
+cmake -DGeant4_DIR=/opt/geant4.10.04.p02/lib64/Geant4-10.4.2 ../B1
+make
+./exampleB1
