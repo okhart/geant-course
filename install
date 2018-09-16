@@ -9,10 +9,12 @@ cmake -DGEANT4_INSTALL_DATA=ON -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_BUILD_MULTITH
 make -j4 VERBOSE=1
 
 make install
-echo "source /opt/geant4.10.04.p02/bin/geant4.sh" >> $HOME/.bashrc
+
+echo "source /opt/geant4.10.04.p02/bin/geant4.sh" >> /home/$USER/.bashrc
 source /opt/geant4.10.04.p02/bin/geant4.sh
+
 cd $CURRENT_DIR
-cp -r ./geant4.10.04.p02/examples $HOME
-chmod -R 777 $HOME/examples
+cp -r ./geant4.10.04.p02/examples /home/$USER
+chmod -R 777 /home/$USER/examples
 rm -rf geant4.10.04.p02
-mv $HOME/examples $HOME/geant4-examples
+mv /home/$USER/examples /home/$USER/geant4-examples
