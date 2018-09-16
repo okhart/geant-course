@@ -11,7 +11,7 @@ make -j4 VERBOSE=1
 make install
 echo "source /opt/geant4.10.04.p02/bin/geant4.sh" >> $HOME/.bashrc
 source /opt/geant4.10.04.p02/bin/geant4.sh
-cd CURRENT_DIR
+cd $CURRENT_DIR
 cp -r ./geant4.10.04.p02/examples $HOME
 chmod -R 777 $HOME/examples
 rm -rf geant4.10.04.p02
