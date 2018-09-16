@@ -10,6 +10,7 @@ openGL
 
 coin - так написано на сайте geant. Это набор библиотек, не знаю, как он называется в вашем репозитории. В моем - так и есть - coin.
 
+Далее выполните следующие команды:
 
 git clone https://github.com/okhart/geant-course.git
 cd geant-course
