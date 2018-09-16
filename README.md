@@ -13,7 +13,9 @@ coin - так написано на сайте geant. Это набор библ
 Далее выполните следующие команды:
 
 git clone https://github.com/okhart/geant-course.git
+
 cd geant-course
+
 sudo ./install
 
 Установка займет около получаса.
